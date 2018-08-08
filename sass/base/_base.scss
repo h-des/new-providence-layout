@@ -1,4 +1,6 @@
 
+//font
+$font-primary: 'Arial';
 
 //colors
 $color-primary: #267DF4;
@@ -12,3 +14,26 @@ $color-grey: #8C8F94;
 $color-grey-inactive: rgba(38, 41, 44, 0.4);
 
 $color-grey-dark: #26272D;
+
+*, 
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+}
+
+button {
+  outline: none;
+  border: none;
+}
+
+body {
+  font-family: $font-primary; 
+  position: relative;
+}
