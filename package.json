@@ -1,0 +1,33 @@
+{
+  "name": "new_providence_layout",
+  "version": "1.0.0",
+  "description": "recreating layout from psd",
+  "main": "index.js",
+  "scripts": {
+    "watch:sass": "node-sass sass/main.scss css/style.css -w",
+    "devserver": "live-server",
+    "start": "npm-run-all --parallel devserver watch:sass",
+    "compile:sass": "node-sass sass/main.scss css/style.comp.css",
+    "prefix:css": "postcss css/style.comp.css -u autoprefixer -o css/style.prefix.css",
+    "compress:css": "node-sass css/style.prefix.css css/style.css --output-style compressed",
+    "build:css": "npm-run-all compile:sass prefix:css compress:css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/h-des/new-providence-layout.git"
+  },
+  "author": "h-des",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/h-des/new-providence-layout/issues"
+  },
+  "homepage": "https://github.com/h-des/new-providence-layout#readme",
+  "dependencies": {},
+  "devDependencies": {
+    "autoprefixer": "^9.1.0",
+    "concat": "^1.0.3",
+    "node-sass": "^4.9.2",
+    "npm-run-all": "^4.1.3",
+    "postcss-cli": "^6.0.0"
+  }
+}
