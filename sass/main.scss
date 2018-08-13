@@ -1,3 +1,14 @@
+@import "abstract/mixins";
+
 //base
 @import "base/base";
 @import "base/typography";
+
+//components
+@import "components/button";
+@import "layout/nav";
+@import "layout/header";
+//layout 
+
+//pages
+@import "pages/home";

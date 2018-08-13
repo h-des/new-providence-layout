@@ -1,0 +1,21 @@
+@mixin threeColumnGrid {
+  display: grid;
+  grid-template-columns: minmax(5px, 1fr) minmax(1170px, 1fr) minmax(5px, 1fr);
+
+
+  @media only screen and (max-width: 1180px) {
+    grid-template-columns: 10px 1fr 10px;
+  }
+}
+
+
+
+@mixin flexRow {
+  display: flex;
+  flex-direction: row;
+}
+
+@mixin flexColumn {
+  display: flex;
+  flex-direction: column;
+}

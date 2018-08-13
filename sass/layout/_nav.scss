@@ -1,0 +1,46 @@
+
+
+.nav {
+  @include threeColumnGrid;
+  padding-top: 6rem;
+  position: absolute;
+  z-index: 3000;
+
+  &__link {
+    text-decoration: none;
+    color: $color-grey-dark;
+    font-size: 1.6rem;
+  }
+
+  &__li {
+    &:not(:last-child) {
+      margin-right: 4rem;
+    }
+  }
+
+  &__list {
+    grid-column: 2/span 1;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  &__links {
+    @include flexRow;
+    align-items: center;
+  }
+  
+  &__additional-links{
+    @include flexRow;
+    align-items: center;
+  }
+
+  &__logo {
+    height: 1.2rem;;
+  }
+
+  &__apple-icon {
+    margin-right: 10px;
+    font-size: 2rem;
+  }
+}

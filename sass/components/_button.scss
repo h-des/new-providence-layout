@@ -1,0 +1,28 @@
+
+
+.btn {
+  font-size: 1.6rem;
+  padding: 1.1rem 2rem;
+  text-decoration: none;
+  border-radius: 2.1rem;
+  overflow: hidden;
+  
+  &--blue {
+    background-color: $color-primary;
+    color: white;
+    
+    &:hover {
+      background-color: $color-primary-dark;
+    }
+  }
+
+  &--transparent {
+    background-color: transparent;
+    border: 1px solid $color-grey-light-2;
+    color: $color-grey-dark;
+  }
+
+
+
+
+}

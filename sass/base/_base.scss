@@ -4,6 +4,7 @@ $font-primary: 'Arial';
 
 //colors
 $color-primary: #267DF4;
+$color-primary-dark: rgb(60, 138, 248);
 $color-secondary: #6FC754;
 
 
@@ -26,6 +27,7 @@ $color-grey-dark: #26272D;
 html {
   box-sizing: border-box;
   font-size: 62.5%;
+  // overflow-x: hidden;
 }
 
 button {
@@ -36,4 +38,14 @@ button {
 body {
   font-family: $font-primary; 
   position: relative;
+  
+  // section {
+  //   @include threeColumnGrid;
+    
+  // }
+}
+
+
+ul {
+  list-style: none;
 }

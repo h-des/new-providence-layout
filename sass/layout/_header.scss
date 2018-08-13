@@ -1,0 +1,27 @@
+.header {
+  // width: 100vw;
+  background-image: url(../images/banner_background.jpg);
+  background-size: cover;
+  background-position: center;
+  @include flexColumn;
+  overflow: hidden;
+  padding: 0 29vw;
+  height: 100vh;
+  position: relative;
+  align-items: center;
+  text-align: center;
+  padding-top: 10vw;
+
+  &__heading {
+    margin-bottom: 3rem;
+  }
+
+  &__paragraph {
+    margin-bottom: 6rem;
+  }
+  
+  &__iphone-img {
+    position: absolute;
+    bottom: -32rem;
+  }
+}
