@@ -10,6 +10,14 @@
     text-decoration: none;
     color: $color-grey-dark;
     font-size: 1.6rem;
+
+    &--disabled {
+      color:  $color-grey-inactive;
+    }
+
+    &:hover {
+      color:  $color-grey-inactive;
+    }
   }
 
   &__li {

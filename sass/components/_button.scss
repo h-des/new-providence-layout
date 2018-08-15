@@ -5,7 +5,9 @@
   padding: 1.1rem 2rem;
   text-decoration: none;
   border-radius: 2.1rem;
+  min-width: 14rem;
   overflow: hidden;
+  cursor: pointer;
   
   &--blue {
     background-color: $color-primary;
@@ -16,13 +18,55 @@
     }
   }
 
+  &--secondary {
+    background-color: $color-secondary;
+    color: white;
+
+    &:hover {
+      background-color: $color-secondary-dark;
+    }
+  }
+
   &--transparent {
     background-color: transparent;
     border: 1px solid $color-grey-light-2;
     color: $color-grey-dark;
+
+    &:hover {
+      background-color: $color-grey-light-2;
+    }
   }
 
+  &--appstore {
+    background-color:#131315;
+    color: white;
+    @include flexRow;
+    margin: 0 auto;
+    align-items: center;
+    padding-top: 0;
+    width: 21rem;
+    height: 6rem;
+    border-radius: 3rem;
+  }
 
+  &__small-text {
+    font-size: 1.2rem;
+    margin-top: 5px;
+  }
 
+  &__medium-text {
+    font-size: 2.3rem;
+  }
+
+  &__container {
+    @include flexColumn;
+    justify-content: center;
+  }
+
+  &__icon--appstore {
+    margin-left: 5px;
+    margin-right: 2.5rem;
+    font-size: 3rem;
+  }
 
 }

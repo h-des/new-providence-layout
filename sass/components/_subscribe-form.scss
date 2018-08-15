@@ -1,0 +1,20 @@
+.subscribe-form {
+  @include flexRow;
+  align-items: center;
+  justify-content: center;
+  margin: 5rem 0 2.5rem 0;
+  
+  
+  &__input {
+    padding: 2rem 14rem 2rem 2.5rem;
+    height: 5rem;
+    width: 58rem;
+    background-color: transparent;
+    border-radius: 25px;
+    border: 1px solid $color-grey-light-2;
+  }
+  
+  &__button {
+    margin-left: -14.5rem;
+  }
+}

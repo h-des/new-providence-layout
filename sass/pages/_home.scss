@@ -1,9 +1,52 @@
 .section-features {
+  @include threeColumnGrid;
 
+  .features-container {
+    grid-column: 2;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5vw;
+    padding: 12rem 0 10rem 0;
+  }
+
+  .features-hr {
+    grid-column: 1/-1;
+    color: rgba(38, 39, 45, 0.05);
+  }
 }
 
 .section-hack-us {
+  height: 90rem;
+  display: grid;
 
+  grid-template-columns: 1fr 1fr;
+
+  // background-image: url(../images/iphone-feature.png);
+  // background-position: left;
+  // background-size: auto;
+
+  &__heading {
+    // max-width: 2px;
+    margin-bottom: 7rem;
+  }
+
+  &__content {
+    margin: 15rem 0 0 8.5rem;
+    max-width: 58rem;
+  }
+
+  &__button-container {
+    margin-top: 7.5rem;
+    display: grid;
+    grid-auto-flow: column;
+    justify-content: left;
+    gap: 2rem;
+  }
+
+  &__arrow {
+    margin-left: 4rem;
+    font-size: 1.4rem;
+  }
 }
 
 .section-map {
@@ -15,7 +58,25 @@
 }
 
 .section-get-app {
+  text-align: center;
+  background-color: $color-grey-light-1;
+  padding: 6.5rem 0 14rem 0;
 
+  &__input {
+    margin-bottom: 6rem;
+  }
+
+  &__text {
+    text-transform: uppercase;
+    color: $color-grey;
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+  }
+
+  &__img {
+    height: 5rem;
+    border-radius: 2.5rem;
+  }
 }
 
 .section-testimonials {
@@ -27,5 +88,13 @@
 }
 
 .section-subscribe {
+  text-align: center;
+
+  
+
+  &__text {
+    font-size: 1.4rem;
+    color: $color-grey;
+  }
 
 }
