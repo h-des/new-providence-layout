@@ -127,6 +127,55 @@
 }
 
 .section-plans {
+  @include threeColumnGrid;
+  background-color: $color-grey-light-1;
+
+  .plans {
+
+    &__container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    
+    &__text-container {
+      max-width: 36rem;
+    }
+
+    &__heading {
+      margin-bottom: 8rem;
+    }
+
+    &__label {
+      margin-bottom: 2rem;
+      font-size: 1.2rem;
+      text-transform: uppercase;
+      color: $color-grey-dark;
+    }
+
+    &__small-text {
+      color: $color-grey;
+      font-size: 1.4rem;
+    }
+
+    &__paragraph {
+      margin-top: 7rem;
+      margin-bottom: 4rem;
+    }
+  
+    &__container {
+      margin-top: 15.5rem;
+      margin-bottom: 19rem;
+      grid-column: 2;
+      @include flexRow;
+      justify-content: space-between;
+    }
+  }
+
+  .tabs-container {
+    @include flexRow;
+    align-items: center;
+  }
 
 }
 
