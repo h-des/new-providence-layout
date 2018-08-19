@@ -1,0 +1,77 @@
+.footer {
+  @include threeColumnGrid;
+  padding-top: 9rem;
+  padding-bottom: 13rem;
+
+  &__links-container { 
+    
+    grid-column: 2;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__info {
+    max-width: 30rem;
+    margin-bottom: 4rem;
+  }
+
+  &__logo {
+    margin-bottom: 3rem;
+  }
+  
+  &__text {
+    line-height: 1.6;
+    font-size: 1.4rem;
+    color: $color-grey;
+    margin-bottom: 3rem;
+  }
+
+  &__link-group {
+    display: flex;
+  }
+
+  &__links {
+    @include flexColumn;
+    margin-right: 6rem;
+  }
+
+  &__list-heading {
+    text-transform: uppercase;
+    font-size: 1.2rem;
+    font-weight: 400;
+    margin-bottom: 18px;
+  }
+
+ 
+  &__link, &__link:visited, &__link:active {
+    font-size: 1.6rem;
+    color: $color-grey;
+    text-decoration: none;
+    
+    &:not(:last-child) {
+      margin-bottom: 15px;
+    }
+
+    &:hover {
+      color: $color-grey-dark;
+    }
+  }
+
+  &__social-links {
+    grid-column: 2;
+  }
+
+  &__social-icon {
+    color: $color-grey-inactive;
+    font-size: 1.7rem;
+
+    &:not(:last-child) {
+      margin-right: 2.6rem;
+    }
+
+    &:hover {
+      color: $color-grey-dark;
+    }
+  }
+
+}

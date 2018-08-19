@@ -25,6 +25,10 @@
   // background-position: left;
   // background-size: auto;
 
+  &__img {
+    max-width: 100%;
+  }
+
   &__heading {
     // max-width: 2px;
     margin-bottom: 7rem;
@@ -54,7 +58,46 @@
 }
 
 .section-interface {
+  text-align: center;
+  background-color: $color-grey-light-1;
+  position: relative;
+  min-height: 130vh;
+  padding-top: 14rem;
 
+  &__hr {
+    width: 5rem;
+    border: 1px solid $color-primary;
+    margin: 0 auto;
+    margin-top: 4rem;
+    margin-bottom: 4rem;
+
+  }
+
+  &__text {
+    text-transform: uppercase;
+    font-size: 1.2rem;
+    letter-spacing: 1px;
+    color: $color-grey;
+  }
+
+  &__gallery {
+    white-space: nowrap;
+    overflow: hidden;
+    position: absolute;
+    left: 50%;
+    bottom: 12rem;
+    transform: translateX(-50%);
+  }
+
+  &__img {
+    box-shadow: 3.4px 9.4px 16px rgba($color: #3D3D3E, $alpha: 0.15);
+    vertical-align: middle;
+    margin: 0 1rem;
+
+    &--main {
+      box-shadow: none;
+    }
+  }
 }
 
 .section-get-app {
@@ -62,7 +105,7 @@
   background-color: $color-grey-light-1;
   padding: 6.5rem 0 14rem 0;
 
-  &__input {
+  &__form {
     margin-bottom: 6rem;
   }
 
@@ -89,7 +132,7 @@
 
 .section-subscribe {
   text-align: center;
-
+  margin: 5rem 0;
   
 
   &__text {
