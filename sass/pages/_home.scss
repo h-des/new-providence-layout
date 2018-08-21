@@ -123,7 +123,7 @@
 }
 
 .section-testimonials {
-
+  @include threeColumnGrid;
 }
 
 .section-plans {
