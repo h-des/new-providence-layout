@@ -1,13 +1,34 @@
 .feature {
+  height: 90rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
 
-  * {
-    margin-bottom: 4.2rem;
+
+  &__img {
+    max-width: 100%;
   }
 
-  &__icon {
-    color: $color-primary;
-    font-size: 4.2rem;
+  &__heading {
+    // max-width: 2px;
+    margin-bottom: 7rem;
   }
 
+  &__content {
+    margin: 15rem 0 0 8.5rem;
+    max-width: 58rem;
+  }
+
+  &__button-container {
+    margin-top: 7.5rem;
+    display: grid;
+    grid-auto-flow: column;
+    justify-content: left;
+    gap: 2rem;
+  }
+
+  &__arrow {
+    margin-left: 4rem;
+    font-size: 1.4rem;
+  }
 
 }
