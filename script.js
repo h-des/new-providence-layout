@@ -3,21 +3,32 @@ const avatars = document.querySelectorAll(".carousel__avatar");
 const carouselLeftButton = document.querySelector(".carousel__button--left");
 const carouselRightButton = document.querySelector(".carousel__button--right");
 
+let carouselInterval = setInterval(() => {
+  carouselMove("LEFT");
+}, 2000);
 
 carouselLeftButton.addEventListener('click', () => {
-    avatarsMove(); 
-    carouselMove();
-  }
-);
+  clearInterval(carouselInterval);
+  carouselMove("LEFT");
+
+  carouselInterval = setInterval(() => {
+    carouselMove("LEFT");
+  }, 2000);
+});
+
+carouselRightButton.addEventListener('click', () => {
+  clearInterval(carouselInterval);
+  carouselMove("RIGHT");
+
+  carouselInterval = setInterval(() => {
+    carouselMove("LEFT");
+  }, 2000);
+});
 
 
-let carouselVisibleOpinionID = 0;
+let carouselVisibleOpinionID = 1;
 let avatarMainID = 1;
 
-setInterval(() => {
-  carouselMove();
-  avatarsMove();
-}, 2000);
 
 const VISIBLE_CLASS = 'carousel__opinion--visible';
 const HIDDEN_CLASS = 'carousel__opinion--hidden';
@@ -28,8 +39,20 @@ const AVATAR_LEFT_CLASS = 'carousel__avatar--left';
 const AVATAR_RIGHT_CLASS = 'carousel__avatar--right';
 const AVATAR_MAIN_CLASS = 'carousel__avatar--main';
 
-function carouselMove () {
+function carouselMove (direction) {
+  moveAvatars(direction);
+  moveOpinons(direction);
+}
+
+function moveOpinons (direction) {
   let opinionListLength = opinions.length;
+  if ( direction === 'LEFT' ) {
+    carouselVisibleOpinionID += 1;
+    carouselVisibleOpinionID = carouselVisibleOpinionID % opinionListLength;
+  } else if ( direction === 'RIGHT' ) {
+    carouselVisibleOpinionID += -1;
+    if ( carouselVisibleOpinionID < 0 ) carouselVisibleOpinionID = opinionListLength + carouselVisibleOpinionID;
+  }
 
   opinions.forEach((e, id) => {
     if ( id == carouselVisibleOpinionID ) {
@@ -38,11 +61,7 @@ function carouselMove () {
       hideOpinion(e);
     }
   })
-  
-  carouselVisibleOpinionID += 1;
-  carouselVisibleOpinionID = carouselVisibleOpinionID % opinionListLength;
 }
-
 
 function showOpinion (opinion) {
   opinion.classList.remove(HIDDEN_CLASS);
@@ -58,21 +77,24 @@ function hideOpinion (opinion) {
   opinion.classList.add(HIDDEN_CLASS);
 }
 
-function avatarsMove () {
+function moveAvatars (direction) {
   const length = avatars.length;
-  let centerID = avatarMainID;
-  let leftID = null, rightID = null;
-  if ( avatarMainID - 1 < 0) {
-    leftID = length - 1;
-  } else {
-    leftID = avatarMainID - 1;
+
+  if ( direction === 'LEFT' ) {
+    avatarMainID += 1;
+    avatarMainID = avatarMainID % length;
+  } else if ( direction === 'RIGHT' ) {
+    avatarMainID += -1;
+    if ( avatarMainID < 0 ) avatarMainID = length + avatarMainID;
   }
 
-  if( avatarMainID + 1 >= length) {
-    rightID = 0;
-  } else {
-    rightID = avatarMainID +1;
-  }
+  const centerID = avatarMainID;
+  let leftID;
+  let rightID;
+
+  leftID = centerID - 1;
+  if ( leftID < 0 ) leftID = length + leftID;
+  rightID = (centerID + 1) % length;
 
   avatars.forEach( e => {
     e.classList.remove(AVATAR_LEFT_CLASS);
@@ -82,11 +104,8 @@ function avatarsMove () {
 
   avatarsList = [...avatars];
 
-  
   avatarsList[leftID].classList.add(AVATAR_LEFT_CLASS);
   avatarsList[rightID].classList.add(AVATAR_RIGHT_CLASS);
   avatarsList[centerID].classList.add(AVATAR_MAIN_CLASS);
 
-  avatarMainID += 1;
-  avatarMainID = avatarMainID % length;
 }
