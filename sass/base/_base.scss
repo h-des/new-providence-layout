@@ -28,6 +28,12 @@ $color-grey-dark: #26272D;
 html {
   box-sizing: border-box;
   font-size: 62.5%;
+
+
+  
+  @include screen("mobile") {
+    font-size: 50%;
+  }
   // overflow-x: hidden;
 }
 

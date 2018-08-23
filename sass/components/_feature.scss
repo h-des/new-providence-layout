@@ -3,6 +3,7 @@
   @include flexRow;
   position: absolute;
   align-items: center;
+
   
   &--left {
     right: 0;
@@ -22,18 +23,30 @@
   }
 
   &__content {
-    max-width: 46rem;
+    width: 46rem;
+    max-width: 100%;
     margin-top: 15rem;
     
-    
+    @include screen(mobile) {
+      padding: 0 2rem;
+    }
+
     &--left {
       // float: right;
       margin-left: 8.5rem;
+      margin-right: 4rem;
       
+      @include screen(mobile) {
+        margin: 0;
+      }
     }
     
     &--right {
       margin-right: 8.5rem;
+      margin-left: 4rem;
+      @include screen(mobile) {
+        margin: 0;
+      }
     }
   }
 
