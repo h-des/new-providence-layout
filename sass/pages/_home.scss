@@ -29,13 +29,17 @@
 }
 
 .section-features {
+  max-width: 117rem;
+  width: 100%;
+  margin: 0 auto;
+  position: relative;
   @include flexColumn;
-  
 
-}
 
-.section-map {
-
+  .features-container {
+    position: relative;
+    height: 90rem;
+  }
 }
 
 .section-interface {
