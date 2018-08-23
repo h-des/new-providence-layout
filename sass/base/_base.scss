@@ -39,11 +39,7 @@ button {
 body {
   font-family: $font-primary; 
   position: relative;
-  
-  // section {
-  //   @include threeColumnGrid;
-    
-  // }
+  overflow-x: hidden;
 }
 
 
