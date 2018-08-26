@@ -2,6 +2,15 @@ const opinions = document.querySelectorAll(".carousel__opinion");
 const avatars = document.querySelectorAll(".carousel__avatar");
 const carouselLeftButton = document.querySelector(".carousel__button--left");
 const carouselRightButton = document.querySelector(".carousel__button--right");
+const nav = document.querySelector(".nav");
+
+window.addEventListener('scroll', throttle(() => {
+    if(window.scrollY > 0) nav.classList.add("nav--white-bg");
+    else nav.classList.remove("nav--white-bg");
+
+}, 400))
+
+
 
 let carouselInterval = setInterval(() => {
   carouselMove("LEFT");
@@ -108,4 +117,28 @@ function moveAvatars (direction) {
   avatarsList[rightID].classList.add(AVATAR_RIGHT_CLASS);
   avatarsList[centerID].classList.add(AVATAR_MAIN_CLASS);
 
+}
+
+
+function throttle (fn, threshhold, scope) {
+  threshhold || (threshhold = 250);
+  var last,
+      deferTimer;
+  return function () {
+    var context = scope || this;
+
+    var now = +new Date,
+        args = arguments;
+    if (last && now < last + threshhold) {
+      // hold on to it
+      clearTimeout(deferTimer);
+      deferTimer = setTimeout(function () {
+        last = now;
+        fn.apply(context, args);
+      }, threshhold);
+    } else {
+      last = now;
+      fn.apply(context, args);
+    }
+  };
 }

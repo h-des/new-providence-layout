@@ -5,6 +5,7 @@
   // text-align: center;
   @include flexRow;
   justify-content: center;
+  overflow: hidden;
 
   &__container {
   }
@@ -29,9 +30,12 @@
   &__avatars-container {
     @include flexRow;
     height: 130px;
+    // position: absolute;
     margin-bottom: 7rem;
     align-items: center;
     justify-content: center;
+    overflow: hidden;
+    width: 700px;
   }
 
   &__avatar {
@@ -39,6 +43,7 @@
     height: 13rem;
     transition: all 0.3s;
     position: absolute;
+    overflow: hidden;
 
 
     &--main {
@@ -54,10 +59,19 @@
     
     &--left {
       transform: translateX(-240px);
+
+      @include screen(mobile) {
+        transform: translate(0);
+        opacity: 0;
+      }
     }
     
     &--right {
       transform: translateX(240px);
+        @include screen(mobile) {
+          transform: translate(0);
+          opacity: 0;
+        }
     }
 
     &--hidden {
@@ -69,6 +83,7 @@
   &__opinions-container {
     overflow: hidden;
     text-align: center;
+    margin-top: 13rem;
   }
 
   &__opinion {

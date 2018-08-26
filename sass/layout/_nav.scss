@@ -1,52 +1,126 @@
 
 
 .nav {
+  position: fixed;
   @include threeColumnGrid;
   padding-top: 6rem;
-  position: absolute;
+  padding-bottom: 6rem;
+  // position: absolute;
   z-index: 3000;
+  transition: all 0.3s;
+  
+  &--white-bg {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+    background-color: white;
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1)
+  }
+  
+  @include screen (tablet) {
+    display: none;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+    background-color: white;
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1)  
+  }
 
+
+  &__button-hamburger {
+    // display: none;
+    // width: 0;
+    // visibility: collapse;
+    
+    @include screen(tablet) {
+      display: inline;
+    }
+  }
   
 
   &__link {
     text-decoration: none;
     color: $color-grey-dark;
     font-size: 1.6rem;
-
+    
+    
     &--disabled {
       color:  $color-grey-inactive;
     }
-
+    
     &:hover {
       color:  $color-grey-inactive;
     }
   }
-
+  
   &__li {
     &:not(:last-child) {
       margin-right: 4rem;
+      
+      @include screen(tablet) {
+        margin-right: 0;
+      }
     }
+
+    @include screen(tablet) {
+      width: 100%;
+      padding: 2rem 0;
+
+      &:hover {
+        background-color: $color-grey-light-1;
+      }
+    }
+
+    &--hamburger {
+      display: none;
+      visibility: collapse;
+      
+      @include screen(tablet) {
+        display: inline-block;
+        visibility: visible;
+      }
+    }
+
+
   }
 
   &__list {
+    @include flexRow;
     grid-column: 2/span 1;
-    display: flex;
     justify-content: space-between;
     align-items: center;
+
+    @include screen(tablet) {
+      @include flexColumn;
+      width: 100%;
+      text-align: center;
+    }
   }
   
   &__links {
     @include flexRow;
     align-items: center;
+    @include screen(tablet) {
+      @include flexColumn;
+      text-align: center;
+      width: 100%;
+    }
   }
   
   &__additional-links{
     @include flexRow;
     align-items: center;
+
+    @include screen(tablet) {
+      @include flexColumn;
+      width: 100%;
+    }
   }
 
   &__logo {
     height: 1.2rem;;
+
+    @include screen(tablet) {
+      display: none;
+    }
   }
 
   &__apple-icon {
