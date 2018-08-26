@@ -132,13 +132,25 @@
   .plans {
 
     &__container {
-      display: flex;
-      justify-content: space-between;
+      margin-top: 15.5rem;
+      margin-bottom: 19rem;
+      grid-column: 2;
+      @include flexRow;
       align-items: center;
+      justify-content: space-between;
+
+      @include screen(laptop) {
+        flex-direction: column;
+      }
     }
     
     &__text-container {
       max-width: 36rem;
+
+      @include screen(laptop) {
+        margin-bottom: 4rem;
+        max-width: 80%;
+      }
     }
 
     &__heading {
@@ -161,19 +173,15 @@
       margin-top: 7rem;
       margin-bottom: 4rem;
     }
-  
-    &__container {
-      margin-top: 15.5rem;
-      margin-bottom: 19rem;
-      grid-column: 2;
-      @include flexRow;
-      justify-content: space-between;
-    }
   }
 
   .tabs-container {
     @include flexRow;
     align-items: center;
+
+    @include screen(tablet) {
+      flex-direction: column;
+    }
   }
 
 }
