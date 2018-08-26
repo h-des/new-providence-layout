@@ -7,6 +7,11 @@
     grid-column: 2;
     display: flex;
     justify-content: space-between;
+
+    @include screen(tablet) {
+      flex-direction: column;
+      margin-bottom: 3rem;
+    }
   }
 
   &__info {
