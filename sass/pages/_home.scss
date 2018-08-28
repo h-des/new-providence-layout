@@ -63,6 +63,10 @@
   min-height: 130vh;
   padding-top: 14rem;
 
+  @include screen(tablet) {
+    min-height: 100vh;
+  }
+
   &__hr {
     width: 5rem;
     border: 1px solid $color-primary;
@@ -84,8 +88,8 @@
     overflow: hidden;
     position: absolute;
     left: 50%;
-    bottom: 12rem;
     transform: translateX(-50%);
+    top: 30rem;
   }
 
   &__img {
@@ -93,8 +97,20 @@
     vertical-align: middle;
     margin: 0 1rem;
 
+    @include screen(tablet) {
+      // transform: scale(0.9);
+      max-height: 50vh;
+      margin: 0 0.4rem;
+    }
+    
     &--main {
       box-shadow: none;
+
+      @include screen(tablet) {
+        // transform: scale(0.9);
+        max-height: 70vh;
+        margin: 0 0.4rem;
+      }
     }
   }
 }

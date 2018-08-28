@@ -11,11 +11,20 @@
   align-items: center;
   text-align: center;
   padding-top: 10vw;
+  
+  @include screen(laptop) {
+    padding: 0 7%;
+    padding-top: 20%;
+  }
 
   
 
   &__heading {
     margin-bottom: 3rem;
+
+    @include screen(tablet) {
+      font-size: 4.5rem;
+    }
   }
 
   &__paragraph {
@@ -24,6 +33,7 @@
   
   &__iphone-img {
     position: absolute;
+    height: 70vh;
     bottom: -32rem;
   }
 }
