@@ -33,16 +33,21 @@
     justify-content: center;
     overflow: hidden;
     width: 700px;
-  }
 
+
+    @include screen(tablet) {
+      max-width: 95vw;
+    }
+  }
+  
   &__avatar {
     border-radius: 50%;
     height: 13rem;
     transition: all 0.3s;
     position: absolute;
     overflow: hidden;
-
-
+    
+    
     &--main {
       box-shadow: 13px 37px 40px rgba($color: #5C5F65, $alpha: 0.28);
       transform: translateX(0);
@@ -51,12 +56,11 @@
     &--left, &--right {
       height: 9rem;
       opacity: 0.3;
-      // filter: brightness(7) contrast(0.06);
     }
     
     &--left {
       transform: translateX(-240px);
-
+      
       @include screen(mobile) {
         transform: translate(0);
         opacity: 0;
@@ -65,32 +69,34 @@
     
     &--right {
       transform: translateX(240px);
-        @include screen(mobile) {
-          transform: translate(0);
-          opacity: 0;
-        }
+      @include screen(mobile) {
+        transform: translate(0);
+        opacity: 0;
+      }
     }
-
+    
     &--hidden {
       display: none;
     }
   }
-
-
+  
+  
   &__opinions-container {
+    // max-width: 95vw;
     overflow: hidden;
     text-align: center;
     margin-top: 13rem;
+
+    @include screen(tablet) {
+      max-width: 95vw;
+    }
   }
 
   &__opinion {
     text-align: center;
-    // float: left;
-    // position: absolute;
     transition: all 1s;
     
     &--hiding {
-      // display: none;
       opacity: 0;
     }
     
@@ -104,7 +110,6 @@
     }
     
     &--visible {
-      // display: initial;
       opacity: 1;
     }
     
