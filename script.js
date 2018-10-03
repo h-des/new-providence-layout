@@ -1,15 +1,25 @@
+const VISIBLE_CLASS = 'carousel__opinion--visible';
+const HIDDEN_CLASS = 'carousel__opinion--hidden';
+const HIDING_CLASS = 'carousel__opinion--hiding';
+const SHOWING_CLASS = 'carousel__opinion--showing';
+
+const AVATAR_LEFT_CLASS = 'carousel__avatar--left';
+const AVATAR_RIGHT_CLASS = 'carousel__avatar--right';
+const AVATAR_MAIN_CLASS = 'carousel__avatar--main';
+
 const opinions = document.querySelectorAll(".carousel__opinion");
 const avatars = document.querySelectorAll(".carousel__avatar");
 const carouselLeftButton = document.querySelector(".carousel__button--left");
 const carouselRightButton = document.querySelector(".carousel__button--right");
 const nav = document.querySelector(".nav");
 
+let carouselVisibleOpinionID = 1;
+let avatarMainID = 1;
+
 window.addEventListener('scroll', throttle(() => {
     if(window.scrollY > 0) nav.classList.add("nav--white-bg");
     else nav.classList.remove("nav--white-bg");
-
 }, 400))
-
 
 
 let carouselInterval = setInterval(() => {
@@ -34,19 +44,6 @@ carouselRightButton.addEventListener('click', () => {
   }, 2000);
 });
 
-
-let carouselVisibleOpinionID = 1;
-let avatarMainID = 1;
-
-
-const VISIBLE_CLASS = 'carousel__opinion--visible';
-const HIDDEN_CLASS = 'carousel__opinion--hidden';
-const HIDING_CLASS = 'carousel__opinion--hiding';
-const SHOWING_CLASS = 'carousel__opinion--showing';
-
-const AVATAR_LEFT_CLASS = 'carousel__avatar--left';
-const AVATAR_RIGHT_CLASS = 'carousel__avatar--right';
-const AVATAR_MAIN_CLASS = 'carousel__avatar--main';
 
 function carouselMove (direction) {
   moveAvatars(direction);
@@ -116,21 +113,18 @@ function moveAvatars (direction) {
   avatarsList[leftID].classList.add(AVATAR_LEFT_CLASS);
   avatarsList[rightID].classList.add(AVATAR_RIGHT_CLASS);
   avatarsList[centerID].classList.add(AVATAR_MAIN_CLASS);
-
 }
 
 
 function throttle (fn, threshhold, scope) {
   threshhold || (threshhold = 250);
-  var last,
+  let last,
       deferTimer;
   return function () {
-    var context = scope || this;
-
-    var now = +new Date,
-        args = arguments;
+    let context = scope || this;
+    let now =+ new Date;
+    let args = arguments;
     if (last && now < last + threshhold) {
-      // hold on to it
       clearTimeout(deferTimer);
       deferTimer = setTimeout(function () {
         last = now;
